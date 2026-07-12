@@ -1,3 +1,7 @@
+output "synapse_integration_runtime_self_hosteds_id" {
+  description = "Map of id values across all synapse_integration_runtime_self_hosteds, keyed the same as var.synapse_integration_runtime_self_hosteds"
+  value       = { for k, v in azurerm_synapse_integration_runtime_self_hosted.synapse_integration_runtime_self_hosteds : k => v.id }
+}
 output "synapse_integration_runtime_self_hosteds_authorization_key_primary" {
   description = "Map of authorization_key_primary values across all synapse_integration_runtime_self_hosteds, keyed the same as var.synapse_integration_runtime_self_hosteds"
   value       = { for k, v in azurerm_synapse_integration_runtime_self_hosted.synapse_integration_runtime_self_hosteds : k => v.authorization_key_primary }
